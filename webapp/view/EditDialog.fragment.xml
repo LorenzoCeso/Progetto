@@ -1,0 +1,32 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+  <Dialog
+    id="helloDialog"
+    title="Modifica Dato">
+    <VBox
+    
+      width="100%" class="vbox">
+      <Label text="Nome: " class="label"></Label>
+      <Input value="{ModelF>/Nome}" width="100%" placeholder="Inserisci Nome"/>
+      <Label text="Cognome: " class="label"></Label>
+      <Input value="{ModelF>/Cognome}" width="100%" placeholder="Inserisci Cognome"/>
+      <Label text="Email: " class="label"></Label>
+      <Input value="{ModelF>/Email}" width="100%" placeholder="Inserisci Email"/>
+      <Label text="Telefono: " class="label"></Label>
+      <Input value="{ModelF>/Telefono}" width="100%" placeholder="Inserisci Telefono" maxLength="10"/>
+      <Label text="Paese: " class="label"></Label>
+      <Input value="{ModelF>/Paese}" width="100%" placeholder="Inserisci Paese"/>
+      <Label text="Citta: " class="label"></Label>
+      <Input value="{ModelF>/Citta}" width="100%" placeholder="Inserisci Citta"/>
+      <Label text="Provincia: " class="label"></Label>
+      <Input value="{ModelF>/Provincia}" width="100%" placeholder="Inserisci Provincia"/>
+      <Label text="Indirizzo: " class="label"></Label>
+      <Input value="{ModelF>/Indirizzo}" width="100%" placeholder="Inserisci Indirizzo"/>
+      <HBox justifyContent="Center" class="hbox">
+        <Button text="Salva" press="onSave" class="buttonsx"/>
+        <Button text="Chiudi" press="onClose" />
+      </HBox>
+    </VBox>
+  </Dialog>
+</core:FragmentDefinition>
+
+

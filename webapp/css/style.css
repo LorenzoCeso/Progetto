@@ -1,0 +1,41 @@
+/* Enter your custom styles here */
+.vbox{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.hbox{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.buttonsx{
+    margin-right: 10px;
+}
+.label{
+    margin-left: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+.actionexport{
+    margin-left: 90%;
+    margin-bottom: 10px;
+}
+.label{
+    padding-top: 10px;
+}
+#{
+    /* facciamo occupare l'intera riga al campo */
+    display: block;
+    width: 100%;
+    /* modifichiamo l'aspetto */
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-bottom: 2px solid black;
+    padding: 10px 5px;
+    margin-bottom: 20px;
+    }
+    #form-group label{
+    /* testo più piccolo e in grassetto */
+    font-size: 12px;
+    font-weight: bold;
+    }

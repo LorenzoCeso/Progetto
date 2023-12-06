@@ -1,0 +1,98 @@
+<mvc:View 
+    controllerName="zacademy.crudoperator.controller.HomePage"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"	>
+    <Page id="page" title="{i18n>title}">
+         
+        <VBox class="sapUiSmallMargin">
+		<f:Form id="FormToolbar"
+			editable="true"
+			ariaLabelledBy="Title1">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="4"
+					labelSpanL="3"
+					labelSpanM="4"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="0"
+                    emptySpanL="4"
+					emptySpanM="0"
+					emptySpanS="0"
+					columnsXL="2"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer ariaLabelledBy="Title2" >
+					<f:toolbar>
+						<Toolbar>
+							<Title id="Title2"/>
+							<ToolbarSpacer />
+						</Toolbar>
+					</f:toolbar>
+					
+					<f:formElements>
+						<f:FormElement label="Nome" >
+                                <f:fields>
+                                    <Input placeholder="Nome" id="Nome" maxLength="20" required="true"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Cognome">
+                                <f:fields>
+                                    <Input placeholder="Cognome" id="Cognome" maxLength="20" required="true"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Email">
+                                <f:fields>
+                                    <Input placeholder="Email" id="Email" maxLength="50" required="false"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Telefono">
+                                <f:fields>
+                                    <Input placeholder="Inserire max. 10 numeri" id="Telefono" type="Number" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Paese">
+                                <f:fields>
+                                    <Input placeholder="Paese" id="Paese" type="Text" maxLength="2" required="false"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Citta">
+                                <f:fields>
+                                    <Input placeholder="Citta" id="Citta" maxLength="50" required="false"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Provincia">
+                                <f:fields>
+                                    <Input placeholder="Provincia" id="Provincia" maxLength="2" required="false"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Indirizzo">
+                                <f:fields>
+                                    <Input placeholder="Indirizzo" id="Indirizzo" maxLength="100"/>
+							</f:fields>
+						</f:FormElement>
+				    </f:formElements>
+                </f:FormContainer> 
+                
+			</f:formContainers>
+
+		</f:Form>
+		<Panel>
+			<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+				
+					<Button id="Button1" text="Registra" type="Accept" press="oCreate" class="sapUiTinyMarginBeginEnd" icon="sap-icon://accept"/>
+
+					<Button id="Button2" text="Reset" type="Emphasized" press="oReset" class="sapUiTinyMarginBeginEnd" icon="sap-icon://reset"/>
+				
+					<Button id="Button3" text="Visualizza Dettagli" press="oViewDetails" class="sapUiTinyMarginBeginEnd" icon="sap-icon://form"/>
+					<BusyDialog id="busyDialog" title="Caricamento in corso..." text="Attendere prego" />
+			</FlexBox>
+		</Panel>
+	</VBox>
+    </Page>	
+</mvc:View>

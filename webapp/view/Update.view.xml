@@ -1,0 +1,178 @@
+<core:FragmentDefinition
+	controllerName="zacademy.crudoperator.controller.Update"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Page
+						enableScrolling="true" 
+						class="sapUiNoContentPadding" 
+						showFooter="true" 
+						showHeader="false" 
+						backgroundDesign="Transparent">
+
+					
+				<Table
+						id="idTable"
+						inset="false"
+						growing="true"
+						growingThreshold="50"
+						mode="SingleSelectLeft"
+						width="auto"
+						delete="deleteRow">
+						<columns>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Id"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Nome"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Cognome"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Email"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Telefono"/>
+						</Column>
+            			<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Paese"/>
+						</Column>
+            			<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Citta"/>
+						</Column>
+            			<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Provincia"/>
+						</Column>
+            			<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Indirizzo"/>
+						</Column>
+					</columns>
+					
+					<!-- <items>
+						<ColumnListItem
+								vAlign="Middle">
+							<cells>
+							<ObjectIdentifier
+										id="ItemText8"
+										text="{modelResult>/Id}"
+										/>	
+								<ObjectIdentifier
+										id="ItemText"
+										text="{modelResult>/Nome}"
+										/>		
+                				<ObjectIdentifier
+										id="ItemText1"
+										text="{modelResult>/Cognome}"/>
+								<ObjectIdentifier
+										id="ItemText2"
+										text="{modelResult>/Email}"/>
+                				<ObjectIdentifier
+										id="ItemText3"
+										text="{modelResult>/Telefono}"/>
+                				<ObjectIdentifier
+										id="ItemText4"
+										text="{modelResult>/Paese}"/>
+                				<ObjectIdentifier
+										id="ItemText5"
+										text="{modelResult>/Citta}"/>
+                				<ObjectIdentifier
+										id="ItemText6"
+										text="{modelResult>/Provincia}"/>
+                				<ObjectIdentifier
+										id="ItemText7"
+										text="{modelResult>/Indirizzo}"/>
+								
+							</cells>
+							
+						</ColumnListItem>
+
+						
+						
+					</items> -->
+						
+				</Table>
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Modifica"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			
+				<Label text="Nome" />
+				<Input id="NomeU" value="{modelSelected>/Nome}" type="Text" placeholder="Inserisci Nome..." />
+				<Label text="Cognome" />
+				<Input id="CognomeU" value="{modelSelected>/Cognome}" type="Text" placeholder="Inserisci Cognome...">
+				</Input>
+				<Label text="Email" />
+				<Input id="EmailU" value="{modelSelected>/Email}" type="Email" placeholder="Inserisci Email...">
+				</Input>
+				<Label text="Telefono" />
+				<Input id="TelefonoU" value="{modelSelected>/Telefono}" type="Number" placeholder="Inserisci Telefono...">
+				</Input>
+				<Label text="Paese" />
+				<Input id="PaeseU" value="{modelSelected>/Paese}" placeholder="Inserisci Paese...">
+				</Input>
+				<Select id="country" selectedKey="{Country}">
+					<items>
+						<core:Item text="England" key="England"/>
+						<core:Item text="Germany" key="Germany"/>
+						<core:Item text="Italy" key="Italy"/>
+					</items>
+				</Select>
+				<Label text="Citta" />
+				<Input id="CittaU" value="{modelSelected>/Citta}" type="Text" placeholder="Inserisci Citta...">
+				</Input>
+				<Label text="Provincia" />
+				<Input id="ProviciaU" value="{modelSelected>/Provincia}" type="Text" placeholder="Inserisci Provincia...">
+				</Input>
+				<Label text="Indirizzo" />
+				<Input id="IndirizzoU" value="{modelSelected>/Indirizzo}" type="Text" placeholder="Inserisci Indirizzo...">
+				</Input>
+				<Input value="{CP}" type="Number" placeholder="Codice Postale"/>
+			
+			
+		</f:SimpleForm>
+		<Panel>
+			<OverflowToolbar>
+						<Button text="Modifica" press="Modifica"/>
+						<BusyDialog id="busyDialog" title="Salvataggio modifiche in corso..." text="Attendere prego" />
+						<Button text="Elimina" type="Reject" press="Cancella" icon="sap-icon://delete"/>
+						<Button text="Indietro" type="Emphasized" press="onBack" icon="sap-icon://undo"/>
+						<BusyDialog id="busyDialogback" title="Reindirizzamento in corso..." text="Attendere prego" /> 
+			</OverflowToolbar>
+		</Panel>
+	</VBox>
+	</Page>
+</core:FragmentDefinition>

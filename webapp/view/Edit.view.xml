@@ -1,0 +1,162 @@
+<mvc:View 
+    controllerName="zacademy.crudoperator.controller.Edit"
+		height="100%"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:core="sap.ui.core"
+		xmlns:layout="sap.ui.layout"
+		xmlns="sap.m"
+		xmlns:f="sap.f"
+		xmlns:fb="sap.ui.comp.filterbar"
+		xmlns:vm="sap.ui.comp.variants">
+    
+
+	<f:DynamicPage id="dynamicPageId" showFooter="true">
+			<!-- DynamicPage Header -->
+			<f:header>
+				<f:DynamicPageHeader pinnable="true">
+					<f:content>
+						<fb:FilterBar id="filterbar" reset="onReset" search="leggi_metodo" useToolbar="true" showGoOnFB="false">
+							<fb:filterItems>
+								<fb:FilterItem name="A" label="Name">
+									<fb:control>
+										<Input value="{modelFilterHome>/Nome}" width="50%" placeholder="Inserisci valore..."/>
+									</fb:control>				
+								</fb:FilterItem>
+                				<fb:FilterItem name="B" label="Cognome">
+									<fb:control>
+										<Input value="{modelFilterHome>/Cognome}" width="50%" placeholder="Inserisci valore..."/>
+									</fb:control>				
+								</fb:FilterItem>								
+							</fb:filterItems>
+						</fb:FilterBar>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+
+			<!-- DynamicPage Content 
+			growingThreshold = visualizzazione di 10 campi-->
+		
+			<f:content>
+			<Page
+						enableScrolling="true" 
+						class="sapUiNoContentPadding" 
+						showFooter="true" 
+						showHeader="false" 
+						backgroundDesign="Transparent">
+				<Button text="Export EXEL" icon="sap-icon://action" class="actionexport" press="onExport"/>
+				<Table
+						id="idTable"
+						inset="false"
+						items="{modelResult>/}"
+						growing="true"
+						growingThreshold="50"
+						mode="SingleSelectLeft"
+						width="auto"
+						delete="deleteRow">
+        
+					<columns>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Id"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Nome"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Cognome"/>
+						</Column>
+						
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Email"/>
+						</Column>
+            			<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Telefono"/>
+						</Column>
+            			<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Paese"/>
+						</Column>
+            			<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Citta"/>
+						</Column>
+            			<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Provincia"/>
+						</Column>
+            			<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Indirizzo"/>
+						</Column>
+					</columns>
+
+					<items>
+						<ColumnListItem
+								vAlign="Middle">
+							<cells>
+							<ObjectIdentifier
+								
+										id="ItemText8"
+										text="{modelResult>Id}"
+										/>	
+								<ObjectIdentifier
+										id="ItemText"
+										text="{modelResult>Nome}"
+										/>		
+                				<ObjectIdentifier
+										id="ItemText1"
+										text="{modelResult>Cognome}"/>
+                				<ObjectIdentifier
+										id="ItemText2"
+										text="{modelResult>Email}"/>
+                				<ObjectIdentifier
+										id="ItemText3"
+										text="{modelResult>Telefono}"/>
+                				<ObjectIdentifier
+										id="ItemText4"
+										text="{modelResult>Paese}"/>
+                				<ObjectIdentifier
+										id="ItemText5"
+										text="{modelResult>Citta}"/>
+                				<ObjectIdentifier
+										id="ItemText6"
+										text="{modelResult>Provincia}"/>
+                				<ObjectIdentifier
+										id="ItemText7"
+										text="{modelResult>Indirizzo}"/>
+								
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+
+				</Page>
+			</f:content>
+  
+			<!-- DynamicPage Footer -->
+			<f:footer>
+				<OverflowToolbar>
+						<!-- <Button text="Modifica" type="Emphasized" press="Updating" icon="sap-icon://edit"/> -->
+						<Button text="Update" type="Emphasized" press="Updating" icon=""/>
+						<BusyDialog id="busyDialog" title="Caricamento in corso..." text="Attendere prego" />
+						<Button text="CreateHP" type="Emphasized" press="oCreateHp" icon=""/>
+
+				</OverflowToolbar>
+      		</f:footer>
+			
+    </f:DynamicPage>
+</mvc:View>	
+	
